@@ -1,0 +1,28 @@
+New
+
+<%= form_with model: @post do |form| %>
+
+<% @post.errors.full_messages_for(:title).each do |message| %>
+<%= message %>
+<% end %>
+
+<% @post.errors.full_messages_for(:body).each do |message| %>
+<%= message %>
+<% end %>
+
+<% @post.errors.full_messages_for(:user_id).each do |message| %>
+<%= message %>
+<% end %>
+
+<%= form.label :title%><br>
+<%= form.text_field :title %><br>
+
+<%= form.label :body %><br>
+<%= form.text_area :body %><br>
+
+
+
+<%= form.submit %>
+<% end %>
+
+<%= link_to "Index", root_path %>
